@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
+    <h:head>  
+    <title>Employee Details</title>
+    
+      <script type="text/javascript">
+     
+  /*   function details()
+    {
+    	var id = '#{details.id}';
+    	var cId = document.getElementById("j_idt6:id").value;
+    	if(id != null)
+    		{
+    	if(cId == '#{details.id}')
+    		{
+    		document.getElementById("name").innerHTML='#{details.name}';
+    		document.getElementById("salary").innerHTML='#{details.salary}';
+    		document.getElementById("email").innerHTML='#{details.email}';
+    		}
+    	else
+    		{
+    		alert("No records found!");
+    		document.getElementById("name").innerHTML=null;
+    		document.getElementById("salary").innerHTML=null;
+    		document.getElementById("email").innerHTML=null;
+    		}
+    	}
+    } */
+</script> 
+    </h:head>  
+    <h:body >  
+    <hr />
+    <div style="text-align:center;">
+    <h2>Employee Details</h2>
+    <hr />
+      <h:form style="background-color: rgba(0,0,0,0.4);text-align:center;">  
+      <p:outputLabel value="ID:" for="id"> </p:outputLabel>
+      <br />
+      <p:inputText id="id"  value="#{details.id}" required="true" requiredMessage="ID is required!">
+      <p:ajax event="keyup"   update="name"></p:ajax>
+      <p:ajax event="keyup"  update="salary"></p:ajax>
+      <p:ajax event="keyup"  update="email"></p:ajax>
+      </p:inputText>
+      <br />
+       <h:message for="id" style="color:Red" />
+      <br />
+      <br />
+       <ui:fragment  id="info" rendered="#{details.id eq 1}">
+     <p:outputLabel id="name" value="#{details.name}"></p:outputLabel>
+      <br />
+      <p:outputLabel id="salary" value="#{details.salary}"></p:outputLabel>
+      <br />
+      <p:outputLabel id="email" value="#{details.email}"></p:outputLabel>
+    </ui:fragment>
+          
+      </h:form>
+    </div>
+    <hr />
+    </h:body>  
+</html>

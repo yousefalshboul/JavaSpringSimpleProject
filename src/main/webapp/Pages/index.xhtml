@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Login Page</title>
+	<!-- <script type="text/javascript">
+     
+    function login()
+    {
+    	
+    	var username='#{auth.username}';
+    	var password='#{auth.password}';
+    	var cUser = document.getElementById("j_idt6:Username").value;
+    	var cPass = document.getElementById("j_idt6:password").value;
+    	
+if(username != null &amp;&amp; password != null)
+	{
+if(cUser=="#{auth.username}" &amp;&amp; cPass=="#{auth.password}")
+	{
+	
+	alert("Login successfully.");
+	window.location.replace("EmpDetails.xhtml");
+	}
+else
+	{
+	alert("Login Failed");
+	}
+
+    }
+
+    }
+
+</script> -->
+</h:head>
+<h:body>
+	<hr />
+	<div style="text-align: center;">
+		<h2>Login page</h2>
+		<hr />
+		<h:form  id="form" style="background-color: rgba(0,0,0,0.4);text-align:center;">
+		
+			<p:outputLabel value="Username" for="Username"> </p:outputLabel>
+			<br />
+			<p:inputText id="Username" required="true" requiredMessage="Username is required!" value="#{auth.username}" />
+			<br />
+			
+			<br />
+			<br />
+			<p:outputLabel value="Password" for="password"></p:outputLabel>
+			<br />
+			<p:inputText id="password" required="true" requiredMessage="Password is required!" value="#{auth.password}" />
+			<br />
+			<br />
+			<br />
+			<p:commandButton id="save" value="Login" action="#{auth.loggedIn}" />
+			
+				
+			
+		</h:form>
+		<p:message for="form" style="color:Red"/>
+	</div>
+	<hr />
+</h:body>
+</html>
